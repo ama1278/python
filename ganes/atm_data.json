@@ -1,0 +1,39 @@
+{
+  "cash": 200000,
+  "accounts": {
+    "6037991234567890": {
+      "card_number": "6037991234567890",
+      "pin_hash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+      "name": "علی احمدی",
+      "national_id": "",
+      "phone": "",
+      "balance": 2000,
+      "history": [],
+      "failed_attempts": 0,
+      "blocked": false,
+      "daily_withdrawn": 0,
+      "last_withdraw_date": null
+    },
+    "6037993001234504": {
+      "card_number": "6037993001234504",
+      "pin_hash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+      "name": "اميرمحمد عبدالهي",
+      "national_id": "0123456789",
+      "phone": "09964207861",
+      "balance": 100000,
+      "history": [
+        {
+          "time": "2026-10-21 10:21:07",
+          "type": "افتتاح حساب",
+          "amount": 100000,
+          "balance_after": 100000,
+          "note": ""
+        }
+      ],
+      "failed_attempts": 0,
+      "blocked": false,
+      "daily_withdrawn": 0,
+      "last_withdraw_date": null
+    }
+  }
+}
