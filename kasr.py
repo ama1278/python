@@ -38,7 +38,7 @@ class Kasr:
 Soorat,Makhraj=map(int,input("pls enter numbers").split())
 Soorat1,Makhraj1=map(int,input("pls enter numbers").split())
 if Makhraj==0:
-         raise ZeroDivisionError
+        raise ZeroDivisionError
 else:                    
         print(Kasr(Soorat,Makhraj).sadeh())                
         print((Kasr(Soorat,Makhraj,)).summ(Kasr(Soorat1,Makhraj1)))
