@@ -33,7 +33,11 @@ class Kasr:
                 return Kasr(soo,makh).sadeh()                       
         def __str__(kasr):
                 return f"{kasr.soorat}/{kasr.makhraj}"
-        
+        @property
+        def check_makhraj(kasr):
+                if kasr.makhraj==0:
+                        raise ZeroDivisionError('makhraj cant be zero ')
+                
               
 Soorat,Makhraj=map(int,input("pls enter numbers").split())
 Soorat1,Makhraj1=map(int,input("pls enter numbers").split())
