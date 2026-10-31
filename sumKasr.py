@@ -8,7 +8,7 @@ class Kasr:
         @makhraj.setter
         def makhraj(kasr,meghdar):
                 if meghdar==0:
-                        raise ZeroDivisionError("مخرج کسر نمی‌تواند صفر باشد!")
+                        raise ZeroDivisionError(f"makhraj cant be zero")
                 kasr.__makhraj=meghdar
         def gcd(kasr,soorat,makhraj):
                 sooratt=[]
@@ -36,5 +36,5 @@ class Kasr:
         @property
         def check_makhraj(kasr):
                 if kasr.__makhraj==0:
-                        raise ZeroDivisionError("مخرج کسر نمی‌تواند صفر باشد!")
+                        raise ZeroDivisionError("makhraj cant be zero ")                
 
