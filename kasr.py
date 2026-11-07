@@ -1,7 +1,10 @@
 class Kasr:
         def __init__(kasr,soorat,makhraj):
+                if isinstance(soorat,int)==False or isinstance(makhraj,int)==False:
+                        raise TypeError
                 kasr.soorat=soorat
                 kasr.makhraj=makhraj
+                
         def gcd(kasr,soorat,makhraj):
                 sooratt=[]
                 makhrajj=[]
@@ -30,14 +33,18 @@ class Kasr:
         def mult(kasr ,kasr1):
                 makh=kasr.makhraj*kasr1.makhraj
                 soo=(kasr.soorat*kasr1.soorat)
-                return Kasr(soo,makh).sadeh()                       
+                return Kasr(soo,makh).sadeh()              
         def __str__(kasr):
                 return f"{kasr.soorat}/{kasr.makhraj}"
-        
-              
-Soorat,Makhraj=map(int,input("pls enter numbers").split())
-Soorat1,Makhraj1=map(int,input("pls enter numbers").split())
-if Makhraj==0:
+def input_checker(a):
+        checker=input(a).split()        
+        if len(checker)==2:
+                return int(checker[0]), int(checker[1])
+        else:
+                raise ValueError('you can jst enter two variables')
+Soorat,Makhraj=input_checker('enter youre numbers ')
+Soorat1,Makhraj1=input_checker('enter ur numbers')
+if Makhraj==0 or Makhraj1==0:
         raise ZeroDivisionError
 else:                    
         print(Kasr(Soorat,Makhraj).sadeh())                
