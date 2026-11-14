@@ -50,4 +50,4 @@ class Vector3d(Vector):
                         return super().__str__()+f'{self.z}k' 
                 
 ve3=Vector3d(1,2,3)
-print(ve3) 
+print(ve3)
