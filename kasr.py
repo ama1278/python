@@ -20,20 +20,30 @@ class Kasr:
                         if so in makhrajj:
                                 mosh.append(so)
                 biiggest=max(mosh)                
-                return biiggest                                
+                return biiggest
+        
+                                        
         def sadeh(kasr):
                 gCd=kasr.gcd(kasr.soorat,kasr.makhraj)
                 kasr.soorat//=gCd
                 kasr.makhraj//=gCd
                 return kasr
-        def summ(kasr ,kasr1):
+        
+        
+        def __add__(kasr ,kasr1):
                 makh=kasr.makhraj*kasr1.makhraj
                 soo=(kasr.soorat*kasr1.makhraj) +(kasr1.soorat*kasr.makhraj)
                 return Kasr(soo,makh).sadeh()
-        def mult(kasr ,kasr1):
+        def __mul__(kasr ,kasr1):
                 makh=kasr.makhraj*kasr1.makhraj
                 soo=(kasr.soorat*kasr1.soorat)
-                return Kasr(soo,makh).sadeh()              
+                return Kasr(soo,makh).sadeh()  
+        def __add__(kasr ,kasr1):
+                makh=kasr.makhraj*kasr1.makhraj
+                soo=(kasr.soorat*kasr1.makhraj) - (kasr1.soorat*kasr.makhraj)
+                return Kasr(soo,makh).sadeh()        
+        
+                    
         def __str__(kasr):
                 return f"{kasr.soorat}/{kasr.makhraj}"
 def input_checker(a):
@@ -44,9 +54,11 @@ def input_checker(a):
                 raise ValueError('you can jst enter two variables')
 Soorat,Makhraj=input_checker('enter youre numbers ')
 Soorat1,Makhraj1=input_checker('enter ur numbers')
+kasr=Kasr(Soorat,Makhraj)
+kasr1=Kasr(Soorat1,Makhraj1)
 if Makhraj==0 or Makhraj1==0:
         raise ZeroDivisionError
 else:                    
         print(Kasr(Soorat,Makhraj).sadeh())                
-        print((Kasr(Soorat,Makhraj,)).summ(Kasr(Soorat1,Makhraj1)))
-        print(Kasr(Soorat,Makhraj).mult(Kasr(Soorat1,Makhraj1)))        
+        print(kasr+kasr1)
+        print(kasr*kasr1)        
